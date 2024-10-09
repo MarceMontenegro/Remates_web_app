@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Remate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RemateController extends Controller
 {
@@ -23,6 +24,9 @@ class RemateController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->id != 1) {
+            return redirect('/')->with('error', 'No tienes permisos para acceder a esta página.');
+        }
         return view('admin.remates.create');
     }
 

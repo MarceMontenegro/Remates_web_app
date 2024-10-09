@@ -19,7 +19,7 @@ return new class extends Migration
         $table->decimal('precio_base', 8, 2);
         $table->integer('estado');
         $table->date('fecha_de_solicitud')->nullable();
-        $table->string('imagen_URL', 20)->nullable();
+        $table->string('imagen_URL', 255)->nullable();
         $table->unsignedBigInteger('id_usuario');  // El usuario que publica el producto
 
         $table->foreign('id_remate')->references('id_remates')->on('remates')->onDelete('no action')->onUpdate('cascade');
