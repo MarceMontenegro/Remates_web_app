@@ -22,6 +22,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('remate:update-status')->daily();
+        $schedule->command('remate:update-status')->everyMinute();
     }
 }
