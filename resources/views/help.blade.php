@@ -5,12 +5,12 @@
 @section('content_header')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <h1>Dashboard</h1>
+    <center><h1>Centro de Ayuda</h1></center>
 @stop
 
 @section('content')
     <div class="container">
-        <h2 class="text-center mb-4">Centro de Ayuda</h2>
+        
 
         <p><strong>¿Quiénes somos?</strong></p>
         <p>Somos una empresa dedicada a facilitar la compra y venta de bienes a través de subastas públicas y privadas. Con años de experiencia en el mercado de remates, ofrecemos una plataforma transparente y segura para que compradores y vendedores realicen sus transacciones de manera eficiente y satisfactoria.</p>
