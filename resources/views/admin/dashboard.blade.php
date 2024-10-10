@@ -18,6 +18,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Imagen</th> <!-- Nueva columna para la imagen -->
                         <th>Nombre del Producto</th>
                         <th>Descripción</th>
                         <th>Precio Inicial</th>
@@ -28,6 +29,14 @@
                 <tbody>
                     @foreach($solicitudes as $producto)
                         <tr>
+                            <!-- Columna para previsualizar la imagen -->
+                            <td>
+                                @if($producto->imagen_url)
+                                    <img src="{{ asset('storage/' . $producto->imagen_URL) }}" alt="{{ $producto->nombre }}" style="width: 100px; height: 100px; object-fit: cover;">
+                                @else 
+                                    <span>No hay imagen disponible</span>
+                                @endif
+                            </td>
                             <td>{{ $producto->nombre }}</td>
                             <td>{{ $producto->descripcion }}</td>
                             <td>{{ $producto->precio_base }}</td>

@@ -4,10 +4,11 @@
 
 @section('content')
 <div class="container">
+    <br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <!-- Card Box -->
-            <div class="card">
+            <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
                 <div class="card-header">
                     <h3>Publicar Producto en {{ $remate->nombre }}</h3>
                 </div>
@@ -39,8 +40,34 @@
                         <!-- Imagen del Producto -->
                         <div class="form-group">
                             <label for="imagen_URL">Imagen del Producto</label>
-                            <input type="file" class="form-control" name="imagen_URL" accept="image/*">
+                            <input type="file" id="file" class="form-control" name="imagen_URL" accept="image/*">
                         </div>
+                            <br>
+                            <center><output id="list"></output></center>
+                            <script>
+                                function archivo(evt){
+                                   var files = evt.target.files; //file List objet
+                                   //Obtenemos la imagen del campo "file"
+                                   for(var i = 0, f; f = files[i]; i++ ){
+                                      //solo admitimos imagenes
+                                      if(!f.type.match('image.*')){
+                                        continue;
+                                      }
+                                      var reader = new FileReader();
+                                      reader.onload = (function (theFile){
+                                        return function (e) {
+                                            //insertamos la imagen
+                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbail" src="',e.target.result,'" widtch="40%" title="',escape(theFile.name),'"/>'].join('');
+                                        };
+                                      })(f);
+                                      reader.readAsDataURL(f);
+
+                                   }
+
+                                }
+                                document.getElementById('file').addEventListener('change', archivo, false);
+                           </script> 
+                           <br>
 
                         <!-- Fecha de Solicitud (Oculta, será la fecha actual) -->
                         <input type="hidden" name="fecha_de_solicitud" value="{{ now()->format('Y-m-d') }}">
