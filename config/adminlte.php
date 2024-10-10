@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Sis</b>Remates',
+    'logo' => '<b>MSA-</b>Remates',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -190,17 +190,30 @@ return [
     |
     */
 
+    // 'classes_body' => '',
+    // 'classes_brand' => '',
+    // 'classes_brand_text' => '',
+    // 'classes_content_wrapper' => '',
+    // 'classes_content_header' => '',
+    // 'classes_content' => '',
+    // 'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    // 'classes_sidebar_nav' => '',
+    // 'classes_topnav' => 'navbar-white navbar-light',
+    // 'classes_topnav_nav' => 'navbar-expand',
+    // 'classes_topnav_container' => 'container',
+
     'classes_body' => '',
-    'classes_brand' => '',
-    'classes_brand_text' => '',
-    'classes_content_wrapper' => '',
-    'classes_content_header' => '',
-    'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
-    'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
-    'classes_topnav_nav' => 'navbar-expand',
-    'classes_topnav_container' => 'container',
+    'classes_brand' => 'bg-primary',
+    'classes_brand_text' => 'text-white font-weight-bold',
+    'classes_content_wrapper' => 'content-wrapper bg-light',
+    'classes_content_header' => 'content-header bg-info text-white',
+    'classes_content' => 'content bg-white',
+    'classes_sidebar' => 'sidebar-light-primary elevation-4',
+    'classes_sidebar_nav' => 'nav-flat nav-child-indent',
+    'classes_topnav' => 'navbar-primary navbar-dark',
+    'classes_topnav_nav' => 'navbar-expand-lg',
+    'classes_topnav_container' => 'container-fluid',
+
 
     /*
     |--------------------------------------------------------------------------

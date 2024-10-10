@@ -52,7 +52,7 @@ class ProductoController extends Controller
     
         // Si el usuario sube una imagen, guárdala
         if ($request->hasFile('imagen_URL')) {
-            $imagenPath = $request->file('imagen_URL')->store('productos', 'public'); // Guarda la imagen en la carpeta 'productos'
+            $imagenPath = $request->file('imagen_URL')->store('public/productos'); // Guarda la imagen en la carpeta 'productos'
             $producto->imagen_URL = $imagenPath; // Guarda la ruta de la imagen en la base de datos
         }
     
