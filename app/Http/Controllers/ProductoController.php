@@ -57,8 +57,9 @@ class ProductoController extends Controller
         }
     
         // Guardar el producto en la base de datos
+        
         $producto->save();
-    
+        
         // Redirigir al usuario con un mensaje de éxito
         return redirect()->route('productos.create', $remate_id)->with('success', 'Producto enviado para aprobación.');
     }
