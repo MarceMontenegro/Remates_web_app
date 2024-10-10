@@ -5,7 +5,7 @@
 @section('content_header')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <h1>Sobre Nosotros</h1>
+    <center><strong><h1>Sobre Nosotros</h1></strong></center>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
         
 
         <p><strong>¿Quiénes somos?</strong></p>
-        <p>Somos una empresa líder en el sector de subastas, dedicada a conectar compradores y vendedores de una amplia variedad de productos, desde arte y antigüedades hasta bienes inmobiliarios y vehículos. Con años de experiencia en el mercado, nuestra misión es proporcionar un entorno seguro, transparente y profesional para que nuestros clientes realicen sus transacciones con total confianza.</p>
+        <p>Somos la empresa <b>MSA-Remates</b>, líder en el sector de subastas, dedicada a conectar compradores y vendedores de una amplia variedad de productos, desde arte y antigüedades hasta bienes inmobiliarios y vehículos. Con años de experiencia en el mercado, nuestra misión es proporcionar un entorno seguro, transparente y profesional para que nuestros clientes realicen sus transacciones con total confianza.</p>
 
         <p><strong>Nuestros Valores</strong></p>
         <ul>
