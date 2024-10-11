@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>MSA-</b>Remates',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/martillo.jpeg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/martillo.jpeg',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,11 +113,11 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/martillo.jpeg',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 360,
+            'height' => 360,
         ],
     ],
 
@@ -190,18 +190,30 @@ return [
     |
     */
 
-    'classes_body' => '',
-    'classes_brand' => 'bg-primary',
-    'classes_brand_text' => 'text-white font-weight-bold',
-    'classes_content_wrapper' => 'content-wrapper bg-light',
-    'classes_content_header' => 'content-header bg-info text-white',
-    'classes_content' => 'content bg-white',
-    'classes_sidebar' => 'sidebar-light-primary elevation-4',
-    'classes_sidebar_nav' => 'nav-flat nav-child-indent',
-    'classes_topnav' => 'navbar-primary navbar-dark',
-    'classes_topnav_nav' => 'navbar-expand-lg',
-    'classes_topnav_container' => 'container-fluid',
+'classes_body' => 'bg-white',
+'classes_brand' => 'bg-beige', // Cambia el área del logo a color crema
+'classes_brand_text' => 'text-dark font-weight-bold',
+'classes_content_wrapper' => 'content-wrapper bg-white',
+'classes_content_header' => 'content-header bg-beige text-dark', // Cambia el header a color crema con texto oscuro
+'classes_content' => 'content bg-white',
+'classes_sidebar' => 'sidebar-light-light elevation-4',
+'classes_sidebar_nav' => 'nav-flat nav-child-indent',
+'classes_topnav' => 'navbar-light bg-beige', // Cambia la barra de navegación superior a color crema
+'classes_topnav_nav' => 'navbar-expand-lg',
+'classes_topnav_container' => 'container-fluid',
 
+
+// 'classes_body' => 'bg-white',
+// 'classes_brand' => 'bg-beige',
+// 'classes_brand_text' => 'text-dark font-weight-bold',
+// 'classes_content_wrapper' => 'content-wrapper bg-white',
+// 'classes_content_header' => 'content-header bg-beige text-dark',
+// 'classes_content' => 'content bg-white',
+// 'classes_sidebar' => 'sidebar-light-light elevation-4', // Sidebar en tonos claros
+// 'classes_sidebar_nav' => 'nav-flat nav-child-indent',
+// 'classes_topnav' => 'navbar-light navbar-white',
+// 'classes_topnav_nav' => 'navbar-expand-lg',
+// 'classes_topnav_container' => 'container-fluid',
 
     /*
     |--------------------------------------------------------------------------
@@ -316,85 +328,110 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
+        ['header' => 'ACCIONES PRINCIPALES'],
         [
             'text' => 'Remates activos',
             'url' => 'remates',
             'icon' => 'fa fa-check-circle',
             'label_color' => 'success',
         ],
-
         [
-            'text' => 'Crear remate',
-            'url' => 'crear-remate',
-            'icon' => 'fa fa-plus-circle',
+            'text' => 'Remates pendientes',
+            'url' => 'remates',
+            'icon' => 'fa fa-check-circle',
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Remates finalizados',
+            'url' => 'remates',
+            'icon' => 'fa fa-check-circle',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Historial de compra',
+            'url' => 'remates',
+            'icon' => 'fa fa-check-circle',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Historial de venta',
+            'url' => 'remates',
+            'icon' => 'fa fa-check-circle',
+            'label_color' => 'success',
+        ],
+
+        // [
+        //     'text' => 'Crear remate',
+        //     'url' => 'crear-remate',
+        //     'icon' => 'fa fa-plus-circle',
+        //     'label_color' => 'success',
+        // ],
        
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url' => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url' => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text' => 'multilevel',
-        //     'icon' => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url' => '#',
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url' => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url' => '#',
-        //                 ],
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url' => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url' => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url' => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url' => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text' => 'important',
-        //     'icon_color' => 'red',
-        //     'url' => '#',
-        // ],
-        // [
-        //     'text' => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url' => '#',
-        // ],
-        // [
-        //     'text' => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'change_password',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'multilevel',
+            'icon' => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'level_one',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'level_one',
+                    'url' => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url' => '#',
+                        ],
+                        [
+                            'text' => 'level_two',
+                            'url' => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url' => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url' => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'level_one',
+                    'url' => '#',
+                ],
+            ],
+        ],
+        ['header' => 'labels'],
+        [
+            'text' => 'important',
+            'icon_color' => 'red',
+            'url' => '#',
+        ],
+        [
+            'text' => 'warning',
+            'icon_color' => 'yellow',
+            'url' => '#',
+        ],
+        [
+            'text' => 'information',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
     ],
 
     /*

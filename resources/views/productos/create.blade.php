@@ -57,7 +57,7 @@
                                       reader.onload = (function (theFile){
                                         return function (e) {
                                             //insertamos la imagen
-                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbail" src="',e.target.result,'" widtch="40%" title="',escape(theFile.name),'"/>'].join('');
+                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbail" src="',e.target.result,'" width="40%" title="',escape(theFile.name),'"/>'].join('');
                                         };
                                       })(f);
                                       reader.readAsDataURL(f);
@@ -87,3 +87,6 @@
     </div>
 </div>
 @stop
+
+
+

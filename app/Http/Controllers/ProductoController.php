@@ -12,10 +12,14 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($remate_id)
     {
-        //
+        $remate = Remate::findOrFail($remate_id);
+        $productos = Producto::where('id_remate', $remate_id)->get();
+    
+        return view('productos.index', compact('remate', 'productos'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -52,9 +56,13 @@ class ProductoController extends Controller
     
         // Si el usuario sube una imagen, guárdala
         if ($request->hasFile('imagen_URL')) {
-            $imagenPath = $request->file('imagen_URL')->store('public/productos'); // Guarda la imagen en la carpeta 'productos'
-            $producto->imagen_URL = $imagenPath; // Guarda la ruta de la imagen en la base de datos
+            // Almacena la imagen en storage/app/public/productos
+            $imagenPath = $request->file('imagen_URL')->store('productos', 'public'); 
+            // Guarda solo la ruta relativa a la carpeta 'public'
+            $producto->imagen_URL = $imagenPath;
         }
+        
+        
     
         // Guardar el producto en la base de datos
         
