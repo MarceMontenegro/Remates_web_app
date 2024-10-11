@@ -63,7 +63,7 @@
                         <a href="{{ route('productos.create',  $remate->id_remates)}}" class="btn btn-primary">Publicar</a>
                         @endif
                         @if($remate->estado == 1)
-                        <a  class="btn btn-primary">Ver productos</a>
+                        <a  href="{{ route('productos.index', $remate->id_remates) }}" class="btn btn-primary">Ver productos</a>
                         @endif
                     @endif
                 </div>

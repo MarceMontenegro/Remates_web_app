@@ -30,7 +30,6 @@ Route::post('/remates/{remate_id}/productos', [ProductoController::class, 'store
 Route::get('/admin/solicitudes', [AdminController::class, 'mostrarSolicitudes'])->name('admin.dashboard');
 Route::put('/admin/producto/{id_producto}/aceptar', [AdminController::class, 'aceptarProducto'])->name('admin.producto.aceptar');
 Route::put('/admin/producto/{id_producto}/rechazar', [AdminController::class, 'rechazarProducto'])->name('admin.producto.rechazar');
-
 Route::view('/centro-de-ayuda', 'centro_ayuda')->name('welcome.help');
 Route::get('/sobre-nosotros', function () {
     return view('info');
@@ -38,5 +37,6 @@ Route::get('/sobre-nosotros', function () {
 Route::get('/centro-ayuda', function () {
     return view('help');
 });
+Route::get('remates/{remate_id}/productos', [ProductoController::class, 'index'])->name('productos.index');
 
 });

@@ -16,7 +16,7 @@ return new class extends Migration
         $table->unsignedBigInteger('id_remate');
         $table->string('nombre', 20);
         $table->string('descripcion', 20);
-        $table->decimal('precio_base', 8, 2);
+        $table->decimal('precio_base', 255, 2);
         $table->integer('estado');
         $table->date('fecha_de_solicitud')->nullable();
         $table->string('imagen_URL', 255)->nullable();

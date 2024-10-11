@@ -71,6 +71,11 @@
 
 
 @section('css')
+<style>
+    .bg-beige {
+            background-color: #f5f5dc; /* Color beige/crema */
+        }
+</style>
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
 @stop
