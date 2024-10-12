@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('welcome')
 
 @section('title', 'Productos del Remate')
 
@@ -21,7 +21,7 @@
                     <p class="card-text">{{ Str::limit($producto->descripcion, 100) }}</p>
                     <p class="card-text"><strong>Precio Base:</strong> ${{ $producto->precio_base }}</p>
                     <!-- Botón Ver con Bootstrap -->
-                    <a href="{{ route('productos.index', $producto->id_producto) }}" class="btn btn-primary">Ver</a>
+                    <a href="{{ route('productos.show', $producto->id_producto) }}" class="btn btn-primary">Ver</a>
                     {{-- {{ route('productos.show', $producto->id) }} --}}
                 </div>
             </div>

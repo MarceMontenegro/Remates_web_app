@@ -135,20 +135,23 @@
             <a href="/centro-ayuda" class="text-dark mx-2">Centro de Ayuda</a>
             
             <div class="mt-3">
-                <a href="https://wa.me/1234567890" class="text-dark mx-2" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://wa.me/3777237189" class="text-dark mx-2" target="_blank">
+                    <i class="fab fa-whatsapp"></i> 3777237189
                 </a>
                 <a href="https://facebook.com/tu_pagina" class="text-dark mx-2" target="_blank">
-                    <i class="fab fa-facebook"></i> Facebook
+                    <i class="fab fa-facebook"></i> MSA_Remates
                 </a>
                 <a href="https://instagram.com/tu_pagina" class="text-dark mx-2" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
+                    <i class="fab fa-instagram"></i> MSA_Remates
                 </a>
                 <a href="mailto:tuemail@gmail.com" class="text-dark mx-2">
-                    <i class="fas fa-envelope"></i> Gmail
+                    <i class="fas fa-envelope"></i> MSA_remates@gmail.com
                 </a>
                 <span class="text-dark mx-2">
                     <i class="fas fa-phone"></i> +1 (123) 456-7890
+                </span>
+                <span class="text-dark mx-2">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Corrientes, Argentina.
                 </span>
             </div>
         </div>
