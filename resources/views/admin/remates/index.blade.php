@@ -49,22 +49,24 @@
                 </div>
                 <div class="card-footer text-right">
                     {{-- Si el usuario es administrador --}}
-                    @if(auth()->user()->id==1)
-                        <a href="{{ route('admin.remate.show', $remate->id_remates) }}" class="btn btn-info btn-sm">Ver</a>
-                        <a href="{{ route('admin.remate.edit', $remate->id_remates) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ route('admin.remate.destroy', $remate->id_remates) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    @else
-                        {{-- Si el remate está activo, muestra el botón Publicar --}}
-                        @if($remate->estado == 0)
-                        <a href="{{ route('productos.create',  $remate->id_remates)}}" class="btn btn-primary">Publicar</a>
+                    @if(auth()->check())
+                        @if(auth()->user()->id==1)
+                            <a href="{{ route('admin.remate.show', $remate->id_remates) }}" class="btn btn-info btn-sm">Ver</a>
+                            <a href="{{ route('admin.remate.edit', $remate->id_remates) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <form action="{{ route('admin.remate.destroy', $remate->id_remates) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        @else
+                            {{-- Si el remate está activo, muestra el botón Publicar --}}
+                            @if($remate->estado == 0)
+                            <a href="{{ route('productos.create',  $remate->id_remates)}}" class="btn btn-primary">Publicar</a>
+                            @endif
                         @endif
-                        @if($remate->estado == 1)
-                        <a  href="{{ route('productos.index', $remate->id_remates) }}" class="btn btn-primary">Ver productos</a>
-                        @endif
+                    @endif
+                    @if($remate->estado == 1)
+                    <a  href="{{ route('productos.index', $remate->id_remates) }}" class="btn btn-primary">Ver productos</a>
                     @endif
                 </div>
             </div>
