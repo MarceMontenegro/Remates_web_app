@@ -75,10 +75,12 @@ class ProductoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $producto = Producto::findOrFail($id); // Obtén el producto por su ID
+        return view('productos.show', compact('producto'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.

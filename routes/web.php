@@ -38,5 +38,8 @@ Route::get('/centro-ayuda', function () {
     return view('help');
 });
 Route::get('remates/{remate_id}/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::get('productos/{id}', [ProductoController::class, 'show'])->name('productos.show');
+
+
 
 });

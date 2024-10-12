@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('welcome')
 
 @section('title', 'Listado de Remates')
 
