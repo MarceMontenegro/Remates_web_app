@@ -68,60 +68,63 @@
 
 
     <div class="row mt-4">
-       
-        @if (auth()->user()->id == 1)
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>10</h3>
-                    <p>Remates finalizados</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        
+        @if(auth()->check()) 
+      
+            @if (auth()->user()->id == 1)
             <div class="col-lg-3 col-6">
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>Registrar<sup style="font-size: 20px"></sup></h3>
-                        <p>crear-remate</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-plus-circle" style="color: blanchedalmond"></i>
-                    </div>
-                    <a href="/crear-remate" class="small-box-footer">acceder <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-warning">
+                <div class="small-box bg-info">
                     <div class="inner">
                         <h3>10</h3>
-                        <p>Ventas</p>
+                        <p>Remates finalizados</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                        <i class="ion ion-bag"></i>
                     </div>
-                    <a href="admin/solicitudes" class="small-box-footer">Ver solicitudes<i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-        
+            
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>Registrar<sup style="font-size: 20px"></sup></h3>
+                            <p>crear-remate</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-plus-circle" style="color: blanchedalmond"></i>
+                        </div>
+                        <a href="/crear-remate" class="small-box-footer">acceder <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
 
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>1</h3>
-                    <p>Compras</p>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>10</h3>
+                            <p>Ventas</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="admin/solicitudes" class="small-box-footer">Ver solicitudes<i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
+            
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>1</h3>
+                        <p>Compras</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-        </div>
+            
+            @endif
         @endif
         <!-- Rest of your content -->
     </div>
@@ -151,7 +154,9 @@
                     <i class="fas fa-phone"></i> +1 (123) 456-7890
                 </span>
                 <span class="text-dark mx-2">
+                    <a href="https://www.google.com.ar/maps/place/Tucum%C3%A1n+1131,+W3450+EPS,+Corrientes/@-29.146079,-59.2677034,18.75z/data=!4m6!3m5!1s0x944e84bdb5f7b427:0x16df032df900a1f4!8m2!3d-29.1457275!4d-59.267563!16s%2Fg%2F11c5fsmt3q?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D" class="text-dark mx-2" target="_blank">
                     <i class="fa fa-map-marker" aria-hidden="true"></i> Corrientes, Argentina.
+                   
                 </span>
             </div>
         </div>

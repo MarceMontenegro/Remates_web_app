@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Sis.Remates',
+    'title' => 'MSA.Remates',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>MSA-</b>Remates',
-    'logo_img' => 'vendor/adminlte/dist/img/martillo.jpeg',
+    'logo_img' => 'vendor/adminlte/dist/img/logoempresa.jpeg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/martillo.jpeg',
+            'path' => 'vendor/adminlte/dist/img/logoempresa.jpeg',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,11 +113,11 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/martillo.jpeg',
+            'path' => 'vendor/adminlte/dist/img/logoempresa.jpeg',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 360,
-            'height' => 360,
+            'width' => 650,
+            'height' => 650,
         ],
     ],
 
@@ -236,7 +236,7 @@ return [
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
-
+    
     /*
     |--------------------------------------------------------------------------
     | Control Sidebar (Right Sidebar)
@@ -317,7 +317,12 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
+        [
+            'text' => 'Inicio',
+            'url' => '/',
+            'icon' => 'fas fa-home', // Cambia el icono si lo deseas
+            'topnav_right' => true, // Para que aparezca en la parte derecha del navbar
+        ],
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',

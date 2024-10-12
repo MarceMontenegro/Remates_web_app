@@ -12,15 +12,26 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Auth::routes();
-Route::middleware('auth')->group(function () {
+
 Route::get('/', function () {
-        return view('welcome');
-    })->name('welcome');
+    return view('welcome');
+})->name('welcome');
+Auth::routes();
+Route::get('/sobre-nosotros', function () {
+    return view('info');
+});
+Route::get('/centro-ayuda', function () {
+    return view('help');
+});
+Route::get('/remates', [RemateController::class, 'index'])->name('admin.remate.index');
+Route::get('remates/{remate_id}/productos', [ProductoController::class, 'index'])->name('productos.index');
+
+Route::middleware('auth')->group(function () {
+
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/crear-remate', [App\Http\Controllers\RemateController::class, 'create'])->name('admin.remate.create');
 Route::post('/crear-remate/create', [RemateController::class, 'store'])->name('admin.remate.store');
-Route::get('/remates', [RemateController::class, 'index'])->name('admin.remate.index');
+
 Route::get('/remates/{remate}', [RemateController::class, 'show'])->name('admin.remate.show');
 Route::get('/remates/{remate}/edit', [RemateController::class, 'edit'])->name('admin.remate.edit');
 Route::put('/remates/{remate}/update', [RemateController::class, 'update'])->name('admin.remate.update'); // Actualizar remate
@@ -31,13 +42,8 @@ Route::get('/admin/solicitudes', [AdminController::class, 'mostrarSolicitudes'])
 Route::put('/admin/producto/{id_producto}/aceptar', [AdminController::class, 'aceptarProducto'])->name('admin.producto.aceptar');
 Route::put('/admin/producto/{id_producto}/rechazar', [AdminController::class, 'rechazarProducto'])->name('admin.producto.rechazar');
 Route::view('/centro-de-ayuda', 'centro_ayuda')->name('welcome.help');
-Route::get('/sobre-nosotros', function () {
-    return view('info');
-});
-Route::get('/centro-ayuda', function () {
-    return view('help');
-});
-Route::get('remates/{remate_id}/productos', [ProductoController::class, 'index'])->name('productos.index');
+
+
 Route::get('productos/{id}', [ProductoController::class, 'show'])->name('productos.show');
 
 

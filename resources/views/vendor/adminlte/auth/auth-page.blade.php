@@ -19,7 +19,7 @@
     <div class="{{ $auth_type ?? 'login' }}-box">
 
         <center>
-            <img src="{{asset("image/martillo.jpeg")}}" alt="" width="360" >
+            <img src="{{asset("image/logoempresa.jpeg")}}" alt="" width="360" >
             
         </center>
         <br>
