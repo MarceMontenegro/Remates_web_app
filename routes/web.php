@@ -30,11 +30,13 @@ Route::get('/centro-ayuda', function () {
 });
 Route::get('/remates', [RemateController::class, 'index'])->name('admin.remate.index');
 Route::get('remates/{remate_id}/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
-Route::middleware('auth')->group(function () {
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/crear-remate', [App\Http\Controllers\RemateController::class, 'create'])->name('admin.remate.create');
+Route::middleware('auth')->group(function () {//middleware
+
+
+Route::get('/crear-remate', [RemateController::class, 'create'])->name('admin.remate.create');
 Route::post('/crear-remate/create', [RemateController::class, 'store'])->name('admin.remate.store');
 
 Route::get('/remates/{remate}', [RemateController::class, 'show'])->name('admin.remate.show');
@@ -49,9 +51,11 @@ Route::put('/admin/producto/{id_producto}/rechazar', [AdminController::class, 'r
 Route::view('/centro-de-ayuda', 'centro_ayuda')->name('welcome.help');
 
 //mostrar un producto
-Route::get('productos/{id}', [ProductoController::class, 'show'])->name('productos.show');
+Route::get('productos/{id_producto}', [ProductoController::class, 'show'])->name('productos.show');
 //ofertar por un producto
-Route::post('/oferta/{producto}', [OfertaController::class, 'store'])->name('oferta.store');
+Route::get('/oferta/create/{id}', [OfertaController::class, 'create'])->name('oferta.create');
+
+Route::post('/oferta/store/{id_producto}', [OfertaController::class, 'store'])->name('oferta.store');
 
 
 
