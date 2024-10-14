@@ -10,20 +10,34 @@ class RemateController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
-    public function index(Request $request)
-{
-    // Obtén el estado del request (1 para Activos, 0 para Pendientes, 2 para Finalizados)
-    $estado = $request->input('estado');
+      */
+//     public function index(Request $request)
+// {
+//     // Obtén el estado del request (1 para Activos, 0 para Pendientes, 2 para Finalizados)
+//     $estado = $request->input('estado');
 
-    if ($estado !== null) {
-        $remates = Remate::where('estado', $estado)->get(); // Filtra según el estado
-    } else {
-        $remates = Remate::all(); // Si no hay estado, trae todos los remates
+//     if ($estado !== null) {
+//         $remates = Remate::where('estado', $estado)->get(); // Filtra según el estado
+//     } else {
+//         $remates = Remate::all(); // Si no hay estado, trae todos los remates
+//     }
+
+//     return view('admin.remates.index', compact('remates'));
+// }
+    public function index(Request $request)
+    {
+        $estado = $request->input('estado');
+        $remates = Remate::with(['ofertas' => function($query) {
+            $query->orderBy('monto', 'desc'); // Ordenar por el monto de forma descendente
+        }])
+        ->when($estado, function($query, $estado) {
+            return $query->where('estado', $estado);
+        })
+        ->get();
+
+        return view('admin.remates.index', compact('remates'));
     }
 
-    return view('admin.remates.index', compact('remates'));
-}
 
     /**
      * Show the form for creating a new resource.

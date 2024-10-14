@@ -23,4 +23,8 @@ class Remate extends Model
     {
         return $this->hasMany(Producto::class, 'id_remate');
     }
+    public function ofertas()
+    {
+        return $this->hasManyThrough(Oferta::class, Producto::class, 'id_remate', 'producto', 'id_remates', 'id_producto');
+    }
 }
