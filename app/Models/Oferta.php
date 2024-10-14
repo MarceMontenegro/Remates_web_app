@@ -11,6 +11,9 @@ class Oferta extends Model
 
     protected $fillable = [
         'monto',
+        'id_usuario', // Agregar id_usuario para que sea rellenable
+        'producto', // Agregar producto para que sea rellenable
+        'id_remate', // Agregar id_remate para que sea rellenable
     ];
 
     protected $primaryKey = 'id_ofertas';

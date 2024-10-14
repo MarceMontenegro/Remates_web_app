@@ -11,13 +11,19 @@ class RemateController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $remates = Remate::all(); // Obtiene todos los remates
-        
-        return view('admin.remates.index', compact('remates')); // Pasa los remates a la vista
-    
+    public function index(Request $request)
+{
+    // Obtén el estado del request (1 para Activos, 0 para Pendientes, 2 para Finalizados)
+    $estado = $request->input('estado');
+
+    if ($estado !== null) {
+        $remates = Remate::where('estado', $estado)->get(); // Filtra según el estado
+    } else {
+        $remates = Remate::all(); // Si no hay estado, trae todos los remates
     }
+
+    return view('admin.remates.index', compact('remates'));
+}
 
     /**
      * Show the form for creating a new resource.
