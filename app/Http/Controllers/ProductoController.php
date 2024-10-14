@@ -15,10 +15,12 @@ class ProductoController extends Controller
     public function index($remate_id)
     {
         $remate = Remate::findOrFail($remate_id);
-        $productos = Producto::where('id_remate', $remate_id)->get();
+        $productos = Producto::withCount('ofertas')->where('id_remate', $remate_id)->get();
     
         return view('productos.index', compact('remate', 'productos'));
     }
+    
+
     
 
     /**
@@ -69,7 +71,7 @@ class ProductoController extends Controller
         $producto->save();
         
         // Redirigir al usuario con un mensaje de éxito
-        return redirect()->route('welcome', $remate_id)->with('success', 'Producto enviado para aprobación.');
+        return redirect()->route('welcome')->with('success', 'Producto enviado para aprobación.');
     }
     
     /**

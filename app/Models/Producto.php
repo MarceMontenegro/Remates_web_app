@@ -31,4 +31,8 @@ class Producto extends Model
     {
         return $this->belongsTo(Remate::class, 'id_remate');
     }
+    public function ofertas()
+    {
+        return $this->hasMany(Oferta::class, 'producto'); // Ajusta esto según tu relación
+    }
 }
