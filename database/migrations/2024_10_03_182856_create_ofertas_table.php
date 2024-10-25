@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('telefono'); // Agregado el campo telefono
             $table->string('direccion'); // Agregado el campo direccion
             $table->string('codigo_postal'); // Agregado el campo codigo_postal
+            $table->tinyInteger('estado')->default(0); // Estado: 0 = Pendiente, 1 = Activo, 2 = Finalizado
+
             $table->unsignedBigInteger('id_usuario');  // El usuario que realiza la oferta
             $table->unsignedBigInteger('producto'); // Relacionado con el producto
             $table->unsignedBigInteger('id_remate'); // Relacionado con el remate
