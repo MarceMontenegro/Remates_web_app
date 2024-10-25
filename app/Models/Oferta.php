@@ -17,6 +17,7 @@ class Oferta extends Model
         'nombre_completo',
         'pais',
         'provincia',
+        'estado',
         'ciudad',
         'dni',
         'cuil',

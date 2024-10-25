@@ -14,12 +14,16 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <img src="{{ asset('storage/' . $producto->imagen_URL) }}" id="image_{{ $producto->id }}" class="card-img-top" alt="{{ $producto->nombre }}" style="height: 200px; object-fit: cover;">
-
+                @php
+                $ofertasAprobadas = $producto->ofertas->where('estado', 1);
+                @endphp
                 <div class="card-body">
                     <h5 class="card-title">{{ $producto->nombre }}</h5>
                     <p class="card-text">{{ Str::limit($producto->descripcion, 100) }}</p>
                     <p class="card-text"><strong>Precio Base:</strong> ${{ $producto->precio_base }}</p>
-                    <p class="card-text"><strong>Cantidad de Ofertantes:</strong> {{ $producto->ofertas_count }}</p> <!-- Agregado aquí -->
+                    @if( $ofertasAprobadas->isNotEmpty())
+                    <p class="card-text"><strong>Cantidad de Ofertantes:</strong> {{ $ofertasAprobadas->count() }} </p> <!-- Agregado aquí -->
+                    @endif
                     <a href="{{ route('productos.show', $producto->id_producto) }}" class="btn btn-primary">Ver</a>
                 </div>
             </div>
