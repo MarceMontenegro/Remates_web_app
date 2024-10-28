@@ -80,7 +80,7 @@
 
                         </div>
                         <div class="card-footer text-right">
-                            @if(auth()->check())
+                            {{-- @if(auth()->check())
                                 @if(auth()->user()->id == 1)
                                     <a href="{{ route('admin.remate.show', $remate->id_remates) }}" class="btn btn-info btn-sm">Ver</a>
                                     <a href="{{ route('admin.remate.edit', $remate->id_remates) }}" class="btn btn-warning btn-sm">Editar</a>
@@ -94,7 +94,7 @@
                                     <a href="{{ route('productos.create', $remate->id_remates) }}" class="btn btn-primary">Publicar</a>
                                     @endif
                                 @endif
-                            @endif
+                            @endif --}}
                             @if($remate->estado == 1)
                             <a href="{{ route('productos.index', $remate->id_remates) }}" class="btn btn-primary">Ver productos</a>
                             @endif
