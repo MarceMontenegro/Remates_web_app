@@ -68,7 +68,7 @@
 
 
     <div class="row mt-4">
-        @if(auth()->check()) 
+        {{-- @if(auth()->check()) 
       
             @if (auth()->user()->id == 1)
             <div class="col-lg-3 col-6">
@@ -125,7 +125,7 @@
             </div>
             
             @endif
-        @endif
+        @endif --}}
         <!-- Rest of your content -->
     </div>
     
