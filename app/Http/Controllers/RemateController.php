@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oferta;
 use App\Models\Remate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,8 @@ class RemateController extends Controller
         }
         return view('admin.remates.create');
     }
+
+  
 
     /**
      * Store a newly created resource in storage.

@@ -68,7 +68,7 @@ class OfertaController extends Controller
              'codigo_postal' => $request->input('codigo_postal'),
          ]);
      
-         return redirect()->route('welcome')->with('success', 'Oferta creada con éxito.');
+         return redirect()->route('admin.remate.index')->with('success', 'Oferta creada con éxito.');
      }
      
      

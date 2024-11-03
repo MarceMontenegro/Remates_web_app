@@ -68,7 +68,7 @@
                                                 @php
                                                     $ganador = $producto->ofertas->sortByDesc('monto')->first();
                                                 @endphp
-                                                <p><strong>Ganador:</strong> {{ $ganador->usuario->name }}</p>
+                                                <p><strong>Ganador:</strong> {{ $ganador->nombre_completo }}</p>
                                                 <p><strong>Monto Ganador:</strong> ${{ $ganador->monto }}</p>
                                             @else
                                                 <p>No hay ofertas para este producto.</p>
@@ -80,8 +80,8 @@
 
                         </div>
                         <div class="card-footer text-right">
-                            {{-- @if(auth()->check())
-                                @if(auth()->user()->id == 1)
+                            @if(auth()->check())
+                                @if(auth()->user()->id == 1000)
                                     <a href="{{ route('admin.remate.show', $remate->id_remates) }}" class="btn btn-info btn-sm">Ver</a>
                                     <a href="{{ route('admin.remate.edit', $remate->id_remates) }}" class="btn btn-warning btn-sm">Editar</a>
                                     <form action="{{ route('admin.remate.destroy', $remate->id_remates) }}" method="POST" style="display:inline;">
@@ -94,7 +94,7 @@
                                     <a href="{{ route('productos.create', $remate->id_remates) }}" class="btn btn-primary">Publicar</a>
                                     @endif
                                 @endif
-                            @endif --}}
+                            @endif 
                             @if($remate->estado == 1)
                             <a href="{{ route('productos.index', $remate->id_remates) }}" class="btn btn-primary">Ver productos</a>
                             @endif
