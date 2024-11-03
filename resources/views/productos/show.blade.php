@@ -27,7 +27,7 @@
 
     <div class="row mt-4 justify-content-center"> <!-- Justificar contenido al centro -->
         <div class="col-md-12 text-center"> <!-- Mantener el texto a la derecha, aunque esté centrado -->
-            <a href="{{ route('productos.index', $producto->id_producto) }}" class="btn btn-danger">Cancelar</a>
+            <a href="{{ url()->previous() }}" class="btn btn-danger">Cancelar</a>
             <a href="{{ route('oferta.create', $producto->id_producto) }}" class="btn btn-success">Ofertar</a>
         </div>
     </div>

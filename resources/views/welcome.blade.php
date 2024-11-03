@@ -23,7 +23,10 @@
                 <div class="carousel-item active">
                     <div class="carousel-caption d-block caption-top">
                         <h5>Subasta Exclusiva de Pick-Up!</h5>
-                        <a href="/register" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @if(auth()->check()==false)
+                        <a href="/login" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @endif
+
                     </div>
                     <center><img class="d-block w-80 carousel-img" width="1000" src="vendor/adminlte/dist/img/pixelcut-camioneta.jpeg" alt="First slide"></center>
                     <div class="carousel-caption d-none d-md-block">
@@ -34,7 +37,9 @@
                 <div class="carousel-item">
                     <div class="carousel-caption d-block caption-top">
                         <h5>Subasta Finalizada</h5>
-                        <a href="/register" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @if(auth()->check()==false)
+                        <a href="/login" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @endif
                     </div>
                     <center><img class="d-block w-80 carousel-img" width="1050" src="vendor/adminlte/dist/img/pixelcut-moto.jpeg" alt="Second slide"></center>
                     <div class="carousel-caption d-none d-md-block">
@@ -45,7 +50,9 @@
                 <div class="carousel-item">
                     <div class="carousel-caption d-block caption-top">
                         <h5>Nuevas Ofertas</h5>
-                        <a href="/register" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @if(auth()->check()==false)
+                        <a href="/login" class="btn btn-primary mt-3">¡Regístrate!</a>
+                        @endif
                     </div>
                     <center><img class="d-block w-80 carousel-img" width="1130" src="vendor/adminlte/dist/img/pixelcut-laptop.jpeg" alt="Third slide"></center>
                     <div class="carousel-caption d-none d-md-block">

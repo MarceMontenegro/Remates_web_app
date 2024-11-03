@@ -71,7 +71,7 @@ class ProductoController extends Controller
         $producto->save();
         
         // Redirigir al usuario con un mensaje de éxito
-        return redirect()->route('welcome')->with('success', 'Producto enviado para aprobación.');
+        return redirect()->route('admin.remate.index')->with('success', 'Producto enviado para aprobación.');
     }
     
     /**
