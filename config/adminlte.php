@@ -340,12 +340,12 @@ return [
             'icon' => 'fa fa-check-circle',
             'label_color' => 'success',
         ],
-        [
-            'text' => 'Historial',
-            'url' => 'remates',
-            'icon' => 'fa fa-history',
-            'label_color' => 'success',
-        ],
+        // [
+        //     'text' => 'Historial',
+        //     'url' => 'remates',
+        //     'icon' => 'fa fa-history',
+        //     'label_color' => 'success',
+        // ],
     
 
         // [
@@ -355,17 +355,17 @@ return [
         //     'label_color' => 'success',
         // ],
        
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'password/reset',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url' => 'password/reset',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
         // [
         //     'text' => 'multilevel',
         //     'icon' => 'fas fa-fw fa-share',

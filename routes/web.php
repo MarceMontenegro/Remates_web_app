@@ -59,9 +59,4 @@ Route::post('/oferta/store/{id_producto}', [OfertaController::class, 'store'])->
 
 
 
-//
-Route::get('/api/remates', [RemateController::class, 'index']);
-
-
-
 });

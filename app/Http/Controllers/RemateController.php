@@ -12,19 +12,7 @@ class RemateController extends Controller
     /**
      * Display a listing of the resource.
       */
-//     public function index(Request $request)
-// {
-//     // Obtén el estado del request (1 para Activos, 0 para Pendientes, 2 para Finalizados)
-//     $estado = $request->input('estado');
 
-//     if ($estado !== null) {
-//         $remates = Remate::where('estado', $estado)->get(); // Filtra según el estado
-//     } else {
-//         $remates = Remate::all(); // Si no hay estado, trae todos los remates
-//     }
-
-//     return view('admin.remates.index', compact('remates'));
-// }
     public function index(Request $request)
     {
         $estado = $request->input('estado');
@@ -37,6 +25,7 @@ class RemateController extends Controller
         ->get();
 
         return view('admin.remates.index', compact('remates'));
+        
     }
 
 
@@ -125,4 +114,6 @@ class RemateController extends Controller
         $remate->delete();
         return redirect()->route('admin.remate.index')->with('success', 'Remate eliminado exitosamente');
     }
+
+    
 }
