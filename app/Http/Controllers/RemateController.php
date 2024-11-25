@@ -13,20 +13,20 @@ class RemateController extends Controller
      * Display a listing of the resource.
       */
 
-    public function index(Request $request)
-    {
-        $estado = $request->input('estado');
-        $remates = Remate::with(['ofertas' => function($query) {
-            $query->orderBy('monto', 'desc'); // Ordenar por el monto de forma descendente
-        }])
-        ->when($estado, function($query, $estado) {
-            return $query->where('estado', $estado);
-        })
-        ->get();
-
-        return view('admin.remates.index', compact('remates'));
-        
-    }
+      public function index(Request $request)
+      {
+          $estado = $request->input('estado');
+          
+          $remates = Remate::with(['ofertas' => function($query) {
+              $query->orderBy('monto', 'desc'); // Ordenar por el monto de forma descendente
+          }])
+          ->when(isset($estado), function($query) use ($estado) {
+              return $query->where('estado', $estado);
+          })
+          ->get();
+      
+          return view('admin.remates.index', compact('remates'));
+      }
 
 
     /**
